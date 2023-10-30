@@ -25,6 +25,16 @@
                     </ul>
                 </div>
             </div>
+            @if (TempData["loggedInMember"] != null)
+            {
+                <li>@TempData["loggedInMember"]</li>
+                <br>
+                <li><a asp-controller="Login" asp-action="Logout">Logout</a></li>
+            }
+            else
+            {
+                <a asp-controller="Login" asp-action="LoginPage">Login</a>
+            }
         </nav>
     </header>
     <div class="container">
